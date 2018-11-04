@@ -57,15 +57,24 @@
         margin-top: 10px;
         margin-bottom: 50px;
         width: 85vw;
+        // height: 100vh;
+        h2 {
+            height: max-content;
+            width: 100%;
+            padding-bottom: 40px;
+        }
         #friendCardsContainer {
             border: 2px solid #246547;
             border-radius: 5px;
             width: 25vw;
             height: 50vh;
             text-align: center;
-            // background-color: #246547;
             .fCardHeader {
                 margin-bottom: 5px;
+                background-color: #246547;
+                h2 {
+                    padding-bottom: 20px;
+                }
                 img {
                     width: 100px;
                     height: auto;
@@ -81,14 +90,23 @@
     }
     
     #myRatingsDiv {
-        margin: 30px 0 0 30px;
+        height: 100vh;
+        padding: 50px 50px 0 50px;
+        .ratings {
+            display: flex;
+            .aRatingDiv:nth-child(2n-1) {
+                background-color: lightgray;
+            }
+            .buttonsOnRatings:nth-child(2n) {
+                background-color: lightgray;
+            }
+        }
         h2 {
             margin-bottom: 20px;
         }
         .aRatingDiv {
             margin: 0 auto;
-            width: 80vw;
-            background-color: lightgray;
+            width: 95%;
         }
     }
     

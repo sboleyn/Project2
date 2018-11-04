@@ -47,6 +47,10 @@ nav {
   margin-top: 10px;
   margin-bottom: 50px;
   width: 85vw; }
+  #profileContainer h2 {
+    height: max-content;
+    width: 100%;
+    padding-bottom: 40px; }
   #profileContainer #friendCardsContainer {
     border: 2px solid #246547;
     border-radius: 5px;
@@ -54,7 +58,10 @@ nav {
     height: 50vh;
     text-align: center; }
     #profileContainer #friendCardsContainer .fCardHeader {
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      background-color: #246547; }
+      #profileContainer #friendCardsContainer .fCardHeader h2 {
+        padding-bottom: 20px; }
       #profileContainer #friendCardsContainer .fCardHeader img {
         width: 100px;
         height: auto;
@@ -65,13 +72,19 @@ nav {
       flex-direction: column; }
 
 #myRatingsDiv {
-  margin: 30px 0 0 30px; }
+  height: 100vh;
+  padding: 50px 50px 0 50px; }
+  #myRatingsDiv .ratings {
+    display: flex; }
+    #myRatingsDiv .ratings .aRatingDiv:nth-child(2n-1) {
+      background-color: lightgray; }
+    #myRatingsDiv .ratings .buttonsOnRatings:nth-child(2n) {
+      background-color: lightgray; }
   #myRatingsDiv h2 {
     margin-bottom: 20px; }
   #myRatingsDiv .aRatingDiv {
     margin: 0 auto;
-    width: 80vw;
-    background-color: lightgray; }
+    width: 95%; }
 
 @media screen and (max-width: 992px) {
   nav .navContainer {
