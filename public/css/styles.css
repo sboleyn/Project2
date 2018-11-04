@@ -61,7 +61,9 @@ nav {
       margin-bottom: 5px;
       background-color: #246547; }
       #profileContainer #friendCardsContainer .fCardHeader h2 {
-        padding-bottom: 20px; }
+        padding-bottom: 0px; }
+      #profileContainer #friendCardsContainer .fCardHeader p {
+        padding-bottom: 10px; }
       #profileContainer #friendCardsContainer .fCardHeader img {
         width: 100px;
         height: auto;
@@ -78,8 +80,18 @@ nav {
     display: flex; }
     #myRatingsDiv .ratings .aRatingDiv:nth-child(2n-1) {
       background-color: lightgray; }
+    #myRatingsDiv .ratings .buttonsOnRatings {
+      display: flex;
+      flex-direction: column;
+      padding-right: 10px !important;
+      flex-basis: 0;
+      flex-grow: 1; }
+      #myRatingsDiv .ratings .buttonsOnRatings .updateReviewButton {
+        flex-basis: 0;
+        flex-grow: 1; }
     #myRatingsDiv .ratings .buttonsOnRatings:nth-child(2n) {
-      background-color: lightgray; }
+      background-color: lightgray;
+      padding: 10px 0; }
   #myRatingsDiv h2 {
     margin-bottom: 20px; }
   #myRatingsDiv .aRatingDiv {

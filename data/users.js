@@ -10,7 +10,18 @@ var usersArray = [{
             name: "Tag",
             omdbRating: 6.5,
             userRating: 8.5,
-        }],
+        },
+        {
+            name: "The Big Lebowski",
+            omdbRating: 8.1,
+            userRating: 9.0,
+        },
+        {
+            name: "Donnie Darko",
+            omdbRating: 8.1,
+            userRating: 8.0,
+        },
+],
         friends: [{
                 id: "2",
                 userName: "Harry S.",
@@ -23,7 +34,18 @@ var usersArray = [{
                     name: "Tag",
                     omdbRating: 6.5,
                     userRating: 5.5,
-                }]
+                },
+                {
+                    name: "One Flew Over the Cuckoo's Nest",
+                    omdbRating: 8.7,
+                    userRating: 9.5,
+                },
+                {
+                    name: "Guardians of the Galaxy",
+                    omdbRating: 8.1,
+                    userRating: 10.0,
+                },
+            ]
             },
             {
                 id: "3",

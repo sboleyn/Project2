@@ -72,8 +72,11 @@
             .fCardHeader {
                 margin-bottom: 5px;
                 background-color: #246547;
-                h2 {
-                    padding-bottom: 20px;
+                h2{
+                    padding-bottom: 0px;
+                }
+                p {
+                    padding-bottom: 10px;
                 }
                 img {
                     width: 100px;
@@ -94,11 +97,25 @@
         padding: 50px 50px 0 50px;
         .ratings {
             display: flex;
+            // flex-direction: column;
             .aRatingDiv:nth-child(2n-1) {
                 background-color: lightgray;
             }
+
+            .buttonsOnRatings {
+                display: flex;
+                flex-direction: column;
+                padding-right: 10px!important;
+                flex-basis: 0;
+                flex-grow: 1;
+                .updateReviewButton {
+                    flex-basis: 0;
+                    flex-grow: 1;
+                }
+            }
             .buttonsOnRatings:nth-child(2n) {
                 background-color: lightgray;
+                padding: 10px 0;
             }
         }
         h2 {
