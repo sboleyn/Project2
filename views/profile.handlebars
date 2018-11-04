@@ -1,0 +1,22 @@
+<div id="profileHeader">
+    <img src={{userImg}} alt="{{userName}}'s profile image" />
+    <h2>Welcome, {{userName}}</h2>
+</div>
+
+<div id="profileContainer">
+    {{#each friends}}
+    {{> friendCards/friendCards}}
+    {{/each}}
+</div>
+<hr>
+<div id = "myRatingsDiv">
+    <h2>My Ratings</h2>
+    {{#each ratings}}
+        <div class = "aRatingDiv">
+        <p>Name: {{name}}</p>
+        <p>OMDB Rating: {{omdbRating}}</p>
+        <p>My rating: {{userRating}}</p>
+        <hr>
+        </div>
+    {{/each}}
+</div>

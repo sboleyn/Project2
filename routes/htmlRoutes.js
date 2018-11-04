@@ -1,4 +1,5 @@
 var db = require("../models");
+var userData = require("../data/users");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
@@ -8,12 +9,12 @@ module.exports = function(app) {
     });
 
     app.get("/profile/:id", function(req, res) {
-        db.User.findByID(req.params.id).then(function(userData) {
-            res.render("profile", {
-                userData: userData
-            });
-        });
+        // db.User.findByID(req.params.id).then(function(userData) {
+        // res.json(userData);
+        return res.render("profile", userData[req.params.id - 1]);
+
     });
+    // });
 
     app.get("/search", function(req, res) {
         return res.render("./public/search.html");

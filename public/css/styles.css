@@ -1,0 +1,86 @@
+* {
+  margin: 0px;
+  line-height: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  color: black; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100vw;
+  padding: 10px;
+  background-color: #246547; }
+  nav .navContainer {
+    display: flex;
+    width: 25vw; }
+    nav .navContainer li {
+      flex: 1;
+      list-style: none;
+      color: white; }
+  nav #navHeader {
+    margin-left: 20px;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    color: white; }
+    nav #navHeader i {
+      color: white; }
+
+#profileHeader {
+  display: flex;
+  margin: 10px 0 50px 20px;
+  align-items: center; }
+  #profileHeader img {
+    height: 120px;
+    width: auto;
+    border-radius: 5%;
+    border: 1px solid #246547;
+    margin-right: 15px; }
+
+#profileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 85vw; }
+  #profileContainer #friendCardsContainer {
+    border: 2px solid #246547;
+    border-radius: 5px;
+    width: 25vw;
+    height: 50vh;
+    text-align: center; }
+    #profileContainer #friendCardsContainer .fCardHeader {
+      margin-bottom: 5px; }
+      #profileContainer #friendCardsContainer .fCardHeader img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        margin-top: 10px; }
+    #profileContainer #friendCardsContainer .fCardBody {
+      display: flex;
+      flex-direction: column; }
+
+#myRatingsDiv {
+  margin: 30px 0 0 30px; }
+  #myRatingsDiv h2 {
+    margin-bottom: 20px; }
+  #myRatingsDiv .aRatingDiv {
+    margin: 0 auto;
+    width: 80vw;
+    background-color: lightgray; }
+
+@media screen and (max-width: 992px) {
+  nav .navContainer {
+    width: 40vw; } }
+
+@media screen and (max-width: 600px) {
+  nav .navContainer {
+    width: 100vw; }
+  nav #navHeader {
+    margin: 0 auto; }
+  li {
+    flex-basis: 50%; } }
