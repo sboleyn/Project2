@@ -38,7 +38,7 @@
     
     #profileHeader {
         display: flex;
-        margin: 10px 0 50px 20px;
+        margin: 10px 0 30px 20px;
         align-items: center;
         img {
             height: 120px;
@@ -57,22 +57,25 @@
         margin-top: 10px;
         margin-bottom: 50px;
         width: 85vw;
-        // height: 100vh;
+        height: 60vh;
         h2 {
             height: max-content;
             width: 100%;
-            padding-bottom: 40px;
+            // padding-bottom: 20px;
         }
         #friendCardsContainer {
             border: 2px solid #246547;
             border-radius: 5px;
             width: 25vw;
-            height: 50vh;
+            height: 40vh;
             text-align: center;
+            overflow: hidden;
+            position: relative;
+            // height: 50%;
             .fCardHeader {
                 margin-bottom: 5px;
                 background-color: #246547;
-                h2{
+                h2 {
                     padding-bottom: 0px;
                 }
                 p {
@@ -88,9 +91,6 @@
             .fCardBody {
                 display: flex;
                 flex-direction: column;
-                overflow: hidden;
-                position: relative;
-                height: 50%;
                 &:before {
                     content: '';
                     position: absolute;
@@ -99,15 +99,11 @@
                     top: 0;
                     left: 0;
                     background-image: linear-gradient(transparent 80%, white);
-                            }
+                }
             }
-
-            
-
-            
         }
     }
-
+    
     #topContainer {
         height: 100vh;
     }
@@ -121,7 +117,6 @@
             .aRatingDiv:nth-child(2n-1) {
                 background-color: lightgray;
             }
-
             .buttonsOnRatings {
                 display: flex;
                 // flex-direction: column;
@@ -132,7 +127,7 @@
                     // flex-basis: 0;
                     flex-grow: 1;
                 }
-                .deleteReviewButton{
+                .deleteReviewButton {
                     // flex-basis: 0;
                     flex-grow: 1;
                 }
@@ -146,10 +141,9 @@
         }
         .aRatingDiv {
             margin: 0 auto;
-            width: 95%;
+            width: 100%;
             display: flex;
-
-            .myRatingText{
+            .myRatingText {
                 width: 90%;
             }
         }

@@ -5,7 +5,7 @@ var Op = db.Sequelize.Op;
 module.exports = function(app) {
     // Load index page
     app.get("/", function(req, res) {
-        return res.render("profile");
+        return res.sendFile("index.html");
     });
 
     app.get("/profile/:id", function(req, res) {
