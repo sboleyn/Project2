@@ -4,14 +4,18 @@
   font-family: 'Montserrat', sans-serif;
   color: black; }
 
+.test {
+  background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
+  padding-top: 10px;
+  height: 92vh; }
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: auto;
+  height: 8vh;
   width: 100vw;
-  padding: 10px;
   background-color: #246547; }
   nav .navContainer {
     display: flex;
@@ -21,7 +25,7 @@ nav {
       list-style: none;
       color: white; }
   nav #navHeader {
-    margin-left: 20px;
+    margin-left: 15px;
     font-size: 2.5em;
     font-family: 'Roboto', sans-serif;
     color: white; }
@@ -30,7 +34,7 @@ nav {
 
 #profileHeader {
   display: flex;
-  margin: 10px 0 30px 20px;
+  margin: 0 0 30px 20px;
   align-items: center; }
   #profileHeader img {
     height: 120px;
@@ -85,6 +89,42 @@ nav {
 
 #topContainer {
   height: 100vh; }
+  #topContainer .container {
+    background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #topContainer .container form {
+      background-color: rgba(255, 255, 255, 0.582);
+      border-radius: 5px;
+      height: 40vh;
+      width: 50vw;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border: 1px solid #246547; }
+      #topContainer .container form ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 60%;
+        padding: 0; }
+        #topContainer .container form ul li {
+          list-style: none;
+          display: flex;
+          flex-direction: column; }
+          #topContainer .container form ul li label {
+            margin-right: 5px; }
+        #topContainer .container form ul button {
+          color: white;
+          background-color: #246547;
+          padding: 5px;
+          border: 1px solid black;
+          border-radius: 2px; }
 
 #myRatingsDiv {
   height: 100vh;
@@ -119,9 +159,11 @@ nav {
     width: 40vw; } }
 
 @media screen and (max-width: 600px) {
-  nav .navContainer {
-    width: 100vw; }
-  nav #navHeader {
-    margin: 0 auto; }
+  nav {
+    height: auto; }
+    nav .navContainer {
+      width: 100vw; }
+    nav #navHeader {
+      margin: 0 auto; }
   li {
     flex-basis: 50%; } }

@@ -1,3 +1,4 @@
+<div class="test">
 <div id="profileHeader">
     <img src={{userImg}} alt="{{userName}}'s profile image" />
     <h2>Welcome, {{userName}}</h2>
@@ -6,6 +7,7 @@
 <div id="profileContainer">
     <h2>My Friends</h2>
     {{#each friends}} {{> friendCards/friendCards}} {{/each}}
+</div>
 </div>
 {{!-- try to close topContainer class --}}
 </div>

@@ -17,7 +17,7 @@ module.exports = function(app) {
     // });
 
     app.get("/search", function(req, res) {
-        return res.render("./public/search.html");
+        return res.render("search");
     });
 
     // Load example page and pass in an example by id
