@@ -73,6 +73,9 @@ nav {
       display: flex;
       flex-direction: column; }
 
+#topContainer {
+  height: 100vh; }
+
 #myRatingsDiv {
   height: 100vh;
   padding: 50px 50px 0 50px; }
