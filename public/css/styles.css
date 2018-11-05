@@ -77,26 +77,29 @@ nav {
   height: 100vh;
   padding: 50px 50px 0 50px; }
   #myRatingsDiv .ratings {
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     #myRatingsDiv .ratings .aRatingDiv:nth-child(2n-1) {
       background-color: lightgray; }
     #myRatingsDiv .ratings .buttonsOnRatings {
       display: flex;
-      flex-direction: column;
       padding-right: 10px !important;
       flex-basis: 0;
       flex-grow: 1; }
       #myRatingsDiv .ratings .buttonsOnRatings .updateReviewButton {
-        flex-basis: 0;
+        flex-grow: 1; }
+      #myRatingsDiv .ratings .buttonsOnRatings .deleteReviewButton {
         flex-grow: 1; }
     #myRatingsDiv .ratings .buttonsOnRatings:nth-child(2n) {
-      background-color: lightgray;
       padding: 10px 0; }
   #myRatingsDiv h2 {
     margin-bottom: 20px; }
   #myRatingsDiv .aRatingDiv {
     margin: 0 auto;
-    width: 95%; }
+    width: 95%;
+    display: flex; }
+    #myRatingsDiv .aRatingDiv .myRatingText {
+      width: 90%; }
 
 @media screen and (max-width: 992px) {
   nav .navContainer {
