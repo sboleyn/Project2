@@ -5,7 +5,6 @@
   color: black; }
 
 .test {
-  background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
   padding-top: 10px;
   height: 92vh; }
 
@@ -16,7 +15,7 @@ nav {
   flex-wrap: wrap;
   height: 8vh;
   width: 100vw;
-  background-color: #246547; }
+  background-color: #101f0a; }
   nav .navContainer {
     display: flex;
     width: 25vw; }
@@ -34,13 +33,13 @@ nav {
 
 #profileHeader {
   display: flex;
-  margin: 0 0 30px 20px;
+  margin: 0 0 30px 15px;
   align-items: center; }
   #profileHeader img {
     height: 120px;
     width: auto;
     border-radius: 5%;
-    border: 1px solid #246547;
+    border: 1px solid #101f0a;
     margin-right: 15px; }
 
 #profileContainer {
@@ -56,20 +55,25 @@ nav {
     height: max-content;
     width: 100%; }
   #profileContainer #friendCardsContainer {
-    border: 2px solid #246547;
+    border: 2px solid #101f0a;
     border-radius: 5px;
     width: 25vw;
-    height: 40vh;
+    height: 55vh;
     text-align: center;
     overflow: hidden;
     position: relative; }
     #profileContainer #friendCardsContainer .fCardHeader {
       margin-bottom: 5px;
-      background-color: #246547; }
+      background-image: url("../images/movieSupplies.jpeg");
+      background-size: cover; }
       #profileContainer #friendCardsContainer .fCardHeader h2 {
-        padding-bottom: 0px; }
+        padding-bottom: 0px;
+        color: white;
+        background-color: #101f0ad0; }
       #profileContainer #friendCardsContainer .fCardHeader p {
-        padding-bottom: 10px; }
+        padding-bottom: 10px;
+        background-color: #101f0ad0;
+        color: white; }
       #profileContainer #friendCardsContainer .fCardHeader img {
         width: 100px;
         height: auto;
@@ -90,7 +94,7 @@ nav {
 #topContainer {
   height: 100vh; }
   #topContainer .container {
-    background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
+    background-image: url("../images/movieFriends.jpeg");
     background-size: cover;
     height: 92vh;
     display: flex;
@@ -104,7 +108,7 @@ nav {
       align-items: center;
       display: flex;
       justify-content: center;
-      border: 1px solid #246547; }
+      border: 1px solid #101f0a; }
       #topContainer .container form ul {
         margin: 0 auto;
         display: flex;
@@ -121,7 +125,7 @@ nav {
             margin-right: 5px; }
         #topContainer .container form ul button {
           color: white;
-          background-color: #246547;
+          background-color: #101f0a;
           padding: 5px;
           border: 1px solid black;
           border-radius: 2px; }

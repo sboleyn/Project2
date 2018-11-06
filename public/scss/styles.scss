@@ -8,7 +8,6 @@
     }
     
     .test {
-        background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
         padding-top: 10px;
         height: 92vh;
     }
@@ -21,7 +20,7 @@
         height: 8vh;
         width: 100vw;
         // padding: 10px;
-        background-color: #246547;
+        background-color: #101f0a;
         .navContainer {
             display: flex;
             width: 25vw;
@@ -44,13 +43,13 @@
     
     #profileHeader {
         display: flex;
-        margin: 0 0 30px 20px;
+        margin: 0 0 30px 15px;
         align-items: center;
         img {
             height: 120px;
             width: auto;
             border-radius: 5%;
-            border: 1px solid #246547;
+            border: 1px solid #101f0a;
             margin-right: 15px;
         }
     }
@@ -70,22 +69,27 @@
             // padding-bottom: 20px;
         }
         #friendCardsContainer {
-            border: 2px solid #246547;
+            border: 2px solid #101f0a;
             border-radius: 5px;
             width: 25vw;
-            height: 40vh;
+            height: 55vh;
             text-align: center;
             overflow: hidden;
             position: relative;
             // height: 50%;
             .fCardHeader {
                 margin-bottom: 5px;
-                background-color: #246547;
+                background-image: url("../images/movieSupplies.jpeg");
+                background-size: cover;
                 h2 {
                     padding-bottom: 0px;
+                    color: white;
+                    background-color: #101f0ad0;
                 }
                 p {
                     padding-bottom: 10px;
+                    background-color: #101f0ad0;
+                    color: white;
                 }
                 img {
                     width: 100px;
@@ -113,7 +117,7 @@
     #topContainer {
         height: 100vh;
         .container {
-            background-image: linear-gradient(to bottom, #246547, #478b88, #87afbc, #cad4e1, #ffffff);
+            background-image: url("../images/movieFriends.jpeg");
             background-size: cover;
             height: 92vh;
             display: flex;
@@ -127,7 +131,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                border: 1px solid #246547;
+                border: 1px solid #101f0a;
                 ul {
                     margin: 0 auto;
                     display: flex;
@@ -147,7 +151,7 @@
                     }
                     button {
                         color: white;
-                        background-color: #246547;
+                        background-color: #101f0a;
                         padding: 5px;
                         border: 1px solid black;
                         border-radius: 2px;
