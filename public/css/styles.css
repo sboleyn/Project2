@@ -23,6 +23,9 @@ nav {
       flex: 1;
       list-style: none;
       color: white; }
+      nav .navContainer li a {
+        color: white;
+        text-decoration: none; }
   nav #navHeader {
     margin-left: 15px;
     font-size: 2.5em;

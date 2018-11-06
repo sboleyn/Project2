@@ -28,6 +28,10 @@
                 flex: 1;
                 list-style: none;
                 color: white;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
             }
         }
         #navHeader {
