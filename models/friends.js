@@ -1,20 +1,34 @@
-//Dependency
-var Sequelize = require("sequelize");
+"use strict";
+module.exports = function (sequelize, DataTypes) {
+    
+    //Model for Friends 
+    var Friend = sequelize.define("Friend", {
+        //Parameters for the User model
+        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true 
+        },
+        
+        friend_id: { type: DataTypes.INTEGER, foreignKey: true, autoIncrement: true 
+        },
 
-//Connection setup
-var sequelize = new Sequelize("project2_db", "root", "password", {
-    host: "localhost",
-    dialect: "mysql",
-    operatorsAliases: false,
-});
+        name: { type: DataTypes.STRING, allowNull: false 
+        },
 
-var Friend = this.sequelize.define("friend", {
-    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    name: {}
-});
+        gender: { type: DataTypes.STRING, allowNull: false 
+        },
 
-Friend.belongsTo(this.User, {
-    foreignKey: "primaryFriend",
-    constraints: false,
-    as: "friendship"
-});
+        genre: { type: DataTypes.STRING, allowNull: false 
+        },
+
+        location: { type: DataTypes.STRING, allowNull: false 
+        },
+    });
+
+    Friend.associate = function (models) {
+        Friend.belongsTo(models.User, {
+            onDelete: "CASCADE",
+            foreignKey: "friendId"
+        });
+    };
+
+    return Friend;
+};

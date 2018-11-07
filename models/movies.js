@@ -1,45 +1,25 @@
-//Dependency
-var Sequelize = require("sequelize");
+"use strict";
+module.exports = function (sequelize, DataTypes) {
 
-var sequelize = new Sequelize("project2_db", "root", "password", {
-    host: "localhost",
-    dialect: "mysql",
-    operatorsAliases: false,
-});
+    //Model for User table in mySQL
+    var Movie = sequelize.define("Movie", {
+        id: {
+            type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true
+        },
 
-//Model for User table in mySQL
-var User = sequelize.define("user", {
-    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: Sequelize.STRING, allowNull: 
-    
-    (id) associate: (models) => {
-        User.hasMany(models.Friends, {
-            foreignKey: "primaryFriend",
-            constraints: ,
-            scope: {
+        title: {
+            type: DataTypes.STRING, allowNull: false
+        },
 
-            },
+    });
+
+    Movie.associate = function (models) {
+        Movie.hasMany (models.Ratings, {
+            onDelete: "CASCADE",
+            foreignKey: "movieId",
+            as: "movies"
         });
-    },
-});
+    };
 
-//Creation of the table data (using bulkCreate)
-User
-    .sync({ force: true })
-    .then(function() {
-        user.bulkCreate([
-            {
-                id: "",
-                name: "Derek",
-                password: "tagis#1",
-                gender: "guy",
-                genre: "comedy",
-                location: "Tucson, AZ"
-            },
- 
-
-User.findAll().then(user {
-    console.log(user)
-})
-
-sequelize.sync();
+    return Movie;
+};
