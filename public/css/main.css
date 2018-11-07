@@ -24,7 +24,7 @@
     background-color: rgba(255, 255, 255, 0.582);
     border-radius: 5px;
     height: 40vh;
-    width: 50vw;
+    width: 30vw;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -54,10 +54,10 @@
   .container {
     background-size: contain; }
     .container form {
-      width: 60vw; } }
+      width: 40vw; } }
 
 @media screen and (max-width: 600px) {
   .container {
     background-size: contain; }
     .container form {
-      width: 80vw; } }
+      width: 50vw; } }
