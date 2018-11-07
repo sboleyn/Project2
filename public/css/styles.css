@@ -107,7 +107,7 @@ nav {
       background-color: rgba(255, 255, 255, 0.582);
       border-radius: 5px;
       height: 40vh;
-      width: 50vw;
+      width: 30vw;
       align-items: center;
       display: flex;
       justify-content: center;
@@ -163,6 +163,8 @@ nav {
 
 @media screen and (max-width: 992px) {
   nav .navContainer {
+    width: 40vw; }
+  #topContainer .container form {
     width: 40vw; } }
 
 @media screen and (max-width: 600px) {
@@ -173,4 +175,6 @@ nav {
     nav #navHeader {
       margin: 0 auto; }
   li {
-    flex-basis: 50%; } }
+    flex-basis: 50%; }
+  #topContainer .container form {
+    width: 50vw; } }

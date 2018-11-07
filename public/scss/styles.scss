@@ -131,7 +131,7 @@
                 background-color: rgba(255, 255, 255, 0.582);
                 border-radius: 5px;
                 height: 40vh;
-                width: 50vw;
+                width: 30vw;
                 align-items: center;
                 display: flex;
                 justify-content: center;
@@ -212,8 +212,16 @@
                 width: 40vw;
             }
         }
+        #topContainer {
+            .container {
+                form {
+                    width: 40vw;
+                }
+            }
+        }
     }
     
+    ;
     @media screen and (max-width: 600px) {
         nav {
             height: auto;
@@ -227,4 +235,12 @@
         li {
             flex-basis: 50%;
         }
+        #topContainer {
+            .container {
+                form {
+                    width: 50vw;
+                }
+            }
+        }
+        ;
     }
