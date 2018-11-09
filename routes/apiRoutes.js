@@ -21,7 +21,7 @@ module.exports = function (app) {
 
   ///////////////////
   // Movies
-  //////////////////
+  ///////////////////
 
   //Get one movie by title
   app.get("/api/movies", function (req, res) {
