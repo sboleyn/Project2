@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var request = require("request");
 module.exports = function (app) {
   ////////////////////
   // Friends
@@ -7,7 +7,7 @@ module.exports = function (app) {
 
   // Get all friends
   app.get("/api/friends", function (req, res) {
-    db.Friend.findAll({ where: { id: 1 } }).then(function (dbFriends) {
+    db.Friend.findAll({}).then(function (dbFriends) {
       res.json(dbFriends);
     });
   });
@@ -23,18 +23,39 @@ module.exports = function (app) {
   // Movies
   ///////////////////
 
-  //Get one movie by title
-  app.get("/api/movies", function (req, res) {
-    db.Movie.findOne({ where: {title: ''} }).then(function (dbMovies) {
-      res.json(dbMovies);
-    });
+  //Get one movie by title & add to DB
+  app.get("/api/movies/:title", function (req, res) {
 
+
+    var queryOMDB = "https://www.omdbapi.com/?t=" + req.params.title + "&y=&plot=short&apikey=trilogy";
+    request(queryOMDB, function (error, response, body) {
+      var movie = JSON.parse(body);
+ 
+      db.Movie.create({
+        imdbID: movie.imdbID,
+        title: movie.Title,
+        year: movie.Year,
+        Rated: movie.Rated,
+        Genre: movie.Genre,
+        Plot: movie.Plot,
+        Poster: movie.Poster,
+        imdbRating: movie.imdbRating
+      }).then(function(movieCreated){
+        res.json(movieCreated)
+      })
+
+
+    });
+    // db.Movie.findOne({ where: { title: req.params.title } }).then(function (dbMovies) {
+    //   res.json(dbMovies);
+    // });
+  });
   //Get all movies 
   app.get("/api/movies", function (req, res) {
     db.Movie.findAll({}).then(function (dbMovies) {
       res.json(dbMovies);
     });
-
+  });
   //Post a movie to the DB 
   app.post("/api/movie", function (req, res) {
     db.Movie.create(req.body).then(function (dbMovie) {
@@ -49,6 +70,12 @@ module.exports = function (app) {
   //Get all ratings for a movie
   app.get("/api/ratings", function (req, res) {
     db.Rating.findAll({}).then(function (dbRating) {
+      res.json(dbRating);
+    });
+  });
+
+  app.post("/api/ratings", function (req, res) {
+    db.Rating.create(req.body).then(function (dbRating) {
       res.json(dbRating);
     });
   });

@@ -1,5 +1,5 @@
 var db = require("../models");
-var userData = require("../data/users");
+var friendsData = require("../models/friends");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
@@ -9,23 +9,24 @@ module.exports = function(app) {
         return res.sendFile("index.html");
     });  
 
-    app.post("/profile/:username", function(req, res) {
+    app.post("/profile/:name", function(req, res) {
         db.User.findOne({
             where: {
-                name: req.params.username 
+                name: req.params.name 
             }
-        }).then(function(userData) {
-            return res.render("profile",userData);
+        }).then(function(userDat) {
+            console.log(userData)
+            return res.render("profile",friendsData);
         }); 
     });
 
-    app.get("/userprofile", function(req,req) {
+    app.get("/userprofile", function(req,res) {
         db.User.findOne({
             where: {
-                name: req.app.locals.username
+                name: req.app.locals.name
             }
-        }).then(function(userData) {
-            return res.render("profile", userData)
+        }).then(function(userDat) {
+            return res.render("profile", friendsData)
         })
     })
 
@@ -41,9 +42,9 @@ module.exports = function(app) {
                     [Op.like]: req.params.name
                 }
             }
-        }).then(function(UsersData) {
+        }).then(function(UsersDat) {
             res.render("searchResults", {
-                example: UsersData
+                example: friendsData
             });
         });
     });
