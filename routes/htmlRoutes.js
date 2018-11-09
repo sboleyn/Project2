@@ -7,14 +7,24 @@ module.exports = function(app) {
     app.get("/", function(req, res) {
         return res.sendFile("index.html");
     });
-
+/*
     app.get("/profile/:id", function(req, res) {
         // db.User.findByID(req.params.id).then(function(userData) {
         // res.json(userData);
         return res.render("profile", userData[req.params.id - 1]);
 
     });
-    // });
+*/    
+
+    app.post("/profile/:username", function(req, res) {
+        db.User.findOne({
+            where: {
+                username: req.params.username 
+            }
+        }).then(function(userData) {
+            return res.render("profile",userData);
+        }); 
+    });
 
     app.get("/search", function(req, res) {
         return res.render("search");
