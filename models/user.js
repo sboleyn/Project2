@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
         genre: { type: DataTypes.STRING, allowNull: false },
         location: { type: DataTypes.STRING, allowNull: false }
     });
-
+    
     // Associating "User" with "Friends"
     User.associate = function (models) {
         User.hasMany(models.Friends, {

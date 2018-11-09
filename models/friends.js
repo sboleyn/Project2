@@ -1,6 +1,6 @@
 "use strict";
 module.exports = function (sequelize, DataTypes) {
-    
+
     //Model for Friends 
     var Friend = sequelize.define("Friend", {
         //Parameters for the User model
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         genre: { type: DataTypes.STRING, allowNull: false },
         location: { type: DataTypes.STRING, allowNull: false },
     });
-    
+
     Friends
         .sync({ force: true })
         .then(function () {
@@ -47,9 +47,7 @@ module.exports = function (sequelize, DataTypes) {
                     gender: "lady",
                     genre: "fantasy",
                     location: "Portland, OR"
-                },
-            ],
-            )
+                }])
         });
 
     Friend.associate = function (models) {

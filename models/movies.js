@@ -1,11 +1,11 @@
 "use strict";
 module.exports = function (sequelize, DataTypes) {
-
+    
     //Model for Movie table in mySQL
     var Movie = sequelize.define("Movie", {
         id: {
-            type: DataTypes.INTEGER, 
-            primaryKey: true, 
+            type: DataTypes.INTEGER,
+            primaryKey: true,
             autoIncrement: true
         },
         imdbID: {
@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         title: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false
         },
         year: {
@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         Rated: {
             type: DataTypes.STRING,
-            allowNull: false            
+            allowNull: false
         },
         Genre: {
             type: DataTypes.STRING,
@@ -44,7 +44,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Movie.associate = function (models) {
-        Movie.hasMany (models.Ratings, {
+        Movie.hasMany(models.Ratings, {
             onDelete: "CASCADE",
             foreignKey: "movieId",
             as: "movies"
