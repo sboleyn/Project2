@@ -44,10 +44,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Movie.associate = function (models) {
-        Movie.hasMany(models.Ratings, {
-            onDelete: "CASCADE",
-            foreignKey: "movieId",
-            as: "movies"
+        Movie.hasMany(models.Rating, {
+            onDelete: "CASCADE"
         });
     };
 
