@@ -1,27 +1,55 @@
 var db = require("../models");
+var userData = require("../data/users");
+var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+    // Load index page
+    app.locals.username = "Derek";
+    app.get("/", function(req, res) {
+        return res.sendFile("index.html");
+    });  
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+    app.post("/profile/:username", function(req, res) {
+        db.User.findOne({
+            where: {
+                name: req.params.username 
+            }
+        }).then(function(userData) {
+            return res.render("profile",userData);
+        }); 
     });
-  });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+    app.get("/userprofile", function(req,req) {
+        db.User.findOne({
+            where: {
+                name: req.app.locals.username
+            }
+        }).then(function(userData) {
+            return res.render("profile", userData)
+        })
+    })
+
+    app.get("/search", function(req, res) {
+        return res.render("search");
+    });
+
+    // Load example page and pass in an example by id
+    app.get("/search/:name", function(req, res) {
+        db.Friends.findAll({
+            where: {
+                name: {
+                    [Op.like]: req.params.name
+                }
+            }
+        }).then(function(UsersData) {
+            res.render("searchResults", {
+                example: UsersData
+            });
+        });
+    });
+
+    // Render 404 page for any unmatched routes
+    app.get("*", function(req, res) {
+        res.render("404");
+    });
 };

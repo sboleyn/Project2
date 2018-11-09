@@ -1,0 +1,33 @@
+<div class="test">
+<div id="profileHeader">
+    <img src={{userImg}} alt="{{userName}}'s profile image" />
+    <h2>Welcome, {{userName}}</h2>
+</div>
+
+<div id="profileContainer">
+    <h2>My Friends</h2>
+    {{#each friends}} {{> friendCards/friendCards}} {{/each}}
+</div>
+</div>
+{{!-- try to close topContainer class --}}
+</div>
+
+<div id="myRatingsDiv">
+    <h2>My Ratings</h2>
+    <div class="ratings">
+        {{#each ratings}}
+        <div class="aRatingDiv">
+            <div class="myRatingText">
+                <p>Name: {{name}}</p>
+                <p>OMDB Rating: {{omdbRating}}</p>
+                <p id="my-rating">My rating: {{userRating}}</p>
+
+            </div>
+            <div class="buttonsOnRatings">
+                <button type="button" value="Update" data-id="{{id}}" class="updateReviewButton">Update</button>
+                <button type="button" value="Delete" data-id="{{id}}" class="deleteReviewButton">Delete</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

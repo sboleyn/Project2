@@ -3,13 +3,31 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
+  {{!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> --}}
+  <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i|Roboto:500" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script type="text/javascript" src="./js/jQuery.js"></script>
+  <script type="text/javascript" src="./js/hbs.js"></script>
+  <title>Movie Friends</title>
 </head>
 
 <body>
+  <div id= "topContainer">
+    
+  <nav>
+     
+     <h4 id="navHeader"><i class="fa fa-film"></i>Movie Friends</h4>
+    <ul class="navContainer">
+     
+      <li><a id="home-button" href="/userprofile">Home</a></li>
+      <li><a href="/search">Search</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
   {{{body}}}
+  
 </body>
 
 </html>

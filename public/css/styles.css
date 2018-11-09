@@ -1,0 +1,180 @@
+* {
+  margin: 0px;
+  line-height: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  color: black; }
+
+.test {
+  padding-top: 10px;
+  height: 92vh; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 8vh;
+  width: 100vw;
+  background-color: #101f0a; }
+  nav .navContainer {
+    display: flex;
+    width: 25vw; }
+    nav .navContainer li {
+      flex: 1;
+      list-style: none;
+      color: white; }
+      nav .navContainer li a {
+        color: white;
+        text-decoration: none; }
+  nav #navHeader {
+    margin-left: 15px;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    color: white; }
+    nav #navHeader i {
+      color: white; }
+
+#profileHeader {
+  display: flex;
+  margin: 0 0 30px 15px;
+  align-items: center; }
+  #profileHeader img {
+    height: 120px;
+    width: auto;
+    border-radius: 5%;
+    border: 1px solid #101f0a;
+    margin-right: 15px; }
+
+#profileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 85vw;
+  height: 60vh; }
+  #profileContainer h2 {
+    height: max-content;
+    width: 100%; }
+  #profileContainer #friendCardsContainer {
+    border: 2px solid #101f0a;
+    border-radius: 5px;
+    width: 25vw;
+    height: 55vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative; }
+    #profileContainer #friendCardsContainer .fCardHeader {
+      margin-bottom: 5px;
+      background-image: url("../images/movieSupplies.jpeg");
+      background-size: cover; }
+      #profileContainer #friendCardsContainer .fCardHeader h2 {
+        padding-bottom: 0px;
+        color: white;
+        background-color: #101f0ad0; }
+      #profileContainer #friendCardsContainer .fCardHeader p {
+        padding-bottom: 10px;
+        background-color: #101f0ad0;
+        color: white; }
+      #profileContainer #friendCardsContainer .fCardHeader img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        margin-top: 10px; }
+    #profileContainer #friendCardsContainer .fCardBody {
+      display: flex;
+      flex-direction: column; }
+      #profileContainer #friendCardsContainer .fCardBody:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(transparent 80%, white); }
+
+#topContainer {
+  height: 100vh; }
+  #topContainer .container {
+    background-image: url("../images/movieFriends.jpeg");
+    background-size: cover;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #topContainer .container form {
+      background-color: rgba(255, 255, 255, 0.582);
+      border-radius: 5px;
+      height: 40vh;
+      width: 30vw;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border: 1px solid #101f0a; }
+      #topContainer .container form ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 60%;
+        padding: 0; }
+        #topContainer .container form ul li {
+          list-style: none;
+          display: flex;
+          flex-direction: column; }
+          #topContainer .container form ul li label {
+            margin-right: 5px; }
+        #topContainer .container form ul button {
+          color: white;
+          background-color: #101f0a;
+          padding: 5px;
+          border: 1px solid black;
+          border-radius: 2px; }
+
+#myRatingsDiv {
+  height: 100vh;
+  padding: 50px 50px 0 50px; }
+  #myRatingsDiv .ratings {
+    display: flex;
+    flex-direction: column; }
+    #myRatingsDiv .ratings .aRatingDiv:nth-child(2n-1) {
+      background-color: lightgray; }
+    #myRatingsDiv .ratings .buttonsOnRatings {
+      display: flex;
+      padding-right: 10px !important;
+      flex-basis: 0;
+      flex-grow: 1; }
+      #myRatingsDiv .ratings .buttonsOnRatings .updateReviewButton {
+        flex-grow: 1; }
+      #myRatingsDiv .ratings .buttonsOnRatings .deleteReviewButton {
+        flex-grow: 1; }
+    #myRatingsDiv .ratings .buttonsOnRatings:nth-child(2n) {
+      padding: 10px 0; }
+  #myRatingsDiv h2 {
+    margin-bottom: 20px; }
+  #myRatingsDiv .aRatingDiv {
+    margin: 0 auto;
+    width: 100%;
+    display: flex; }
+    #myRatingsDiv .aRatingDiv .myRatingText {
+      width: 90%; }
+
+@media screen and (max-width: 992px) {
+  nav .navContainer {
+    width: 40vw; }
+  #topContainer .container form {
+    width: 40vw; } }
+
+@media screen and (max-width: 600px) {
+  nav {
+    height: auto; }
+    nav .navContainer {
+      width: 100vw; }
+    nav #navHeader {
+      margin: 0 auto; }
+  li {
+    flex-basis: 50%; }
+  #topContainer .container form {
+    width: 50vw; } }

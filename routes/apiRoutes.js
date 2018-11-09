@@ -28,14 +28,12 @@ module.exports = function (app) {
     db.Movie.findOne({ where: {title: ''} }).then(function (dbMovies) {
       res.json(dbMovies);
     });
-  });
 
   //Get all movies 
   app.get("/api/movies", function (req, res) {
     db.Movie.findAll({}).then(function (dbMovies) {
       res.json(dbMovies);
     });
-  });
 
   //Post a movie to the DB 
   app.post("/api/movie", function (req, res) {
@@ -54,7 +52,7 @@ module.exports = function (app) {
       res.json(dbRating);
     });
   });
-
+}
   // Post a rating to a movie by user
 
   // Find a rating for a movie by user
@@ -94,4 +92,3 @@ module.exports = function (app) {
   //       res.json(dbExample);
   //     });
   //   });
-}

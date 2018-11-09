@@ -1,0 +1,21 @@
+<div id="friendCardsContainer">
+
+    <div class="fCardHeader">
+        <img src = {{userImg}} alt = "{{userName}}'s profile image"/>
+        <h2>{{userName}}</h2>
+        <p>Location: {{location}}</p>
+
+    </div>
+
+    <div class="fCardBody">
+        
+        {{#each ratings}}
+        <h3>Movie Name: {{name}} </h3>
+        <p>OMDB Rating: {{omdbRating}}</p>
+        <p>Movie Friend's rating: {{userRating}}</p>
+        <hr>
+        {{/each}}
+    </div>
+    <div class="bottom"></div>
+
+</div>
