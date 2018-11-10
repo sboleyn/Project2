@@ -4,7 +4,6 @@ var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
     // Load index page
-    app.locals.username = "Derek";
     app.get("/", function(req, res) {
         return res.sendFile("index.html");
     });  
@@ -14,20 +13,29 @@ module.exports = function(app) {
             where: {
                 name: req.params.name 
             }
-        }).then(function(userDat) {
+        }).then(function(userData) {
             console.log(userData)
-            return res.render("profile",friendsData);
+            return res.render("profile",userData);
         }); 
     });
 
     app.get("/userprofile", function(req,res) {
         db.User.findOne({
             where: {
-                name: req.app.locals.name
+                name: "Derek"
             }
-        }).then(function(userDat) {
-            return res.render("profile", friendsData)
-        })
+        }).then(function(userData) {
+            db.Friend.findAll({}).then(function (dbFriends) {
+                db.Rating.findAll({}).then(function (ratings) {
+                    data = {
+                        user: userData,
+                        friends: dbFriends,
+                        ratings: ratings
+                    };
+                    return res.render("profile", data)
+                })
+              });
+        });
     })
 
     app.get("/search", function(req, res) {
