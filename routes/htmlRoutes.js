@@ -25,8 +25,16 @@ module.exports = function(app) {
                 name: "Derek"
             }
         }).then(function(userData) {
-            db.Friend.findAll({}).then(function (dbFriends) {
-                db.Rating.findAll({}).then(function (ratings) {
+            db.Friend.findAll({
+                where: {
+                    id: [1,2,3]
+                }
+            }).then(function (dbFriends) {
+                db.Rating.findAll({
+                    where: {
+                        id: [1,2,3]
+                    }
+                }).then(function (ratings) {
                     data = {
                         user: userData,
                         friends: dbFriends,
