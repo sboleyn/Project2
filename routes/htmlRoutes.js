@@ -1,20 +1,50 @@
 var db = require("../models");
-var userData = require("../data/users");
+var friendsData = require("../models/friends");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
     // Load index page
     app.get("/", function(req, res) {
         return res.sendFile("index.html");
+    });  
+
+    app.post("/profile/:name", function(req, res) {
+        db.User.findOne({
+            where: {
+                name: req.params.name 
+            }
+        }).then(function(userData) {
+            console.log(userData)
+            return res.render("profile",userData);
+        }); 
     });
 
-    app.get("/profile/:id", function(req, res) {
-        // db.User.findByID(req.params.id).then(function(userData) {
-        // res.json(userData);
-        return res.render("profile", userData[req.params.id - 1]);
-
-    });
-    // });
+    app.get("/userprofile", function(req,res) {
+        db.User.findOne({
+            where: {
+                name: "Derek"
+            }
+        }).then(function(userData) {
+            db.Friend.findAll({
+                where: {
+                    id: [1,2,3]
+                }
+            }).then(function (dbFriends) {
+                db.Rating.findAll({
+                    where: {
+                        id: [1,2,3]
+                    }
+                }).then(function (ratings) {
+                    data = {
+                        user: userData,
+                        friends: dbFriends,
+                        ratings: ratings
+                    };
+                    return res.render("profile", data)
+                })
+              });
+        });
+    })
 
     app.get("/search", function(req, res) {
         return res.render("search");
@@ -28,9 +58,9 @@ module.exports = function(app) {
                     [Op.like]: req.params.name
                 }
             }
-        }).then(function(UsersData) {
+        }).then(function(UsersDat) {
             res.render("searchResults", {
-                example: UsersData
+                example: friendsData
             });
         });
     });
